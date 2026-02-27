@@ -24,5 +24,23 @@ public class PalindromeCheckerApp {
         boolean isPalindromeReverse = input.equals(reversed);
         System.out.println("Reversed text: " + reversed);
         System.out.println("Is it a Palindrome (Reverse Check)? : " + isPalindromeReverse);
+        String input4 = "radar";
+        char[] chars = input4.toCharArray();
+
+        int start = 0;
+        int end = chars.length - 1;
+        boolean isPalindrome4 = true;
+
+        while (start < end) {
+            if (chars[start] != chars[end]) {
+                isPalindrome4 = false;
+                break;
+            }
+            start++;
+            end--;
+        }
+
+        System.out.println("Input : " + input4);
+        System.out.println("Is Palindrome? : " + isPalindrome4);
     }
 }
