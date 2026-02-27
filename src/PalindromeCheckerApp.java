@@ -15,5 +15,14 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input text: " + input);
         System.out.println("Is it a Palindrome? : " + isPalindrome);
+        String reversed = "";
+
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed += input.charAt(i);
+        }
+
+        boolean isPalindromeReverse = input.equals(reversed);
+        System.out.println("Reversed text: " + reversed);
+        System.out.println("Is it a Palindrome (Reverse Check)? : " + isPalindromeReverse);
     }
 }
