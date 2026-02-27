@@ -1,7 +1,8 @@
 import java.util.Stack;
 import java.util.Queue;
 import java.util.LinkedList;
-
+import java.util.Deque;
+import java.util.ArrayDeque;
 
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
@@ -85,6 +86,26 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input : " + input6);
         System.out.println("Is Palindrome? : " + isPalindrome6);
+
+        String input7 = "refer";
+        Deque<Character> deque = new ArrayDeque<>();
+
+        for (char c : input7.toCharArray()) {
+            deque.add(c);
+        }
+
+        boolean isPalindrome7 = true;
+
+        while (deque.size() > 1) {
+            if (deque.removeFirst() != deque.removeLast()) {
+                isPalindrome7 = false;
+                break;
+            }
+        }
+
+        System.out.println("Input : " + input7);
+        System.out.println("Is Palindrome? : " + isPalindrome7);
+
 
     }
 }
