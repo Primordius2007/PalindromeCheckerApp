@@ -107,5 +107,26 @@ public class PalindromeCheckerApp {
         System.out.println("Is Palindrome? : " + isPalindrome7);
 
 
+        String input8 = "level";
+        LinkedList<Character> list = new LinkedList<>();
+
+        for (char c : input8.toCharArray()) {
+            list.add(c);
+        }
+
+        boolean isPalindrome8 = true;
+
+        while (list.size() > 1) {
+            if (list.removeFirst() != list.removeLast()) {
+                isPalindrome8 = false;
+                break;
+            }
+        }
+
+        System.out.println("Input : " + input8);
+        System.out.println("Is Palindrome? : " + isPalindrome8);
+
+
     }
 }
+
