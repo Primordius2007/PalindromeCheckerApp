@@ -172,6 +172,26 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input : " + input11);
         System.out.println("Is Palindrome? : " + isPalindrome11);
+
+        PalindromeStrategy strategy = new StackStrategy();
+        String input12 = "level";
+        boolean isPalindrome12 = strategy.check(input12);
+
+        System.out.println("Input : " + input12);
+        System.out.println("Is Palindrome? : " + isPalindrome12);
+
+        String input13 = "level";
+        PalindromeStrategy perfStrategy = new StackStrategy();
+
+        long startTime = System.nanoTime();
+        boolean isPalindrome13 = perfStrategy.check(input13);
+        long endTime = System.nanoTime();
+
+        long executionTime = endTime - startTime;
+
+        System.out.println("Input : " + input13);
+        System.out.println("Is Palindrome? : " + isPalindrome13);
+        System.out.println("Execution Time : " + executionTime + " ns");
     }
 }
 
