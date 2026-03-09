@@ -126,7 +126,6 @@ public class PalindromeCheckerApp {
         System.out.println("Input : " + input7);
         System.out.println("Is Palindrome? : " + isPalindrome7);
 
-
         String input8 = "level";
         LinkedList<Character> list = new LinkedList<>();
 
@@ -146,7 +145,26 @@ public class PalindromeCheckerApp {
         System.out.println("Input : " + input8);
         System.out.println("Is Palindrome? : " + isPalindrome8);
 
+        String input9 = "madam";
+        boolean isPalindrome9 = checkPalindrome(input9, 0, input9.length() - 1);
 
+        System.out.println("Input : " + input9);
+        System.out.println("Is Palindrome? : " + isPalindrome9);
+
+        String input10 = "A man a plan a canal Panama";
+        String normalized = input10.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+
+        boolean isPalindrome10 = true;
+
+        for (int i = 0; i < normalized.length() / 2; i++) {
+            if (normalized.charAt(i) != normalized.charAt(normalized.length() - 1 - i)) {
+                isPalindrome10 = false;
+                break;
+            }
+        }
+
+        System.out.println("Input : " + input10);
+        System.out.println("Is Palindrome? : " + isPalindrome10);
         String input9 = "madam";
         boolean isPalindrome9 = checkPalindrome(input9, 0, input9.length() - 1);
 
