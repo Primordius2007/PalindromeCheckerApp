@@ -5,10 +5,21 @@ import java.util.Deque;
 import java.util.ArrayDeque;
 
 public class PalindromeCheckerApp {
+
+    private static boolean checkPalindrome(String s, int start, int end) {
+        if (start >= end) return true;
+        if (s.charAt(start) != s.charAt(end)) return false;
+        return checkPalindrome(s, start + 1, end - 1);
+    }
+
     public static void main(String[] args) {
+
+
         System.out.println("Welcome to the Palindrome Checker Management System");
         System.out.println("Version : 1.0");
         System.out.println("System initialized successfully.");
+
+
         String input = "madam";
         boolean isPalindrome = true;
 
@@ -21,6 +32,8 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input text: " + input);
         System.out.println("Is it a Palindrome? : " + isPalindrome);
+
+
         String reversed = "";
 
         for (int i = input.length() - 1; i >= 0; i--) {
@@ -30,6 +43,8 @@ public class PalindromeCheckerApp {
         boolean isPalindromeReverse = input.equals(reversed);
         System.out.println("Reversed text: " + reversed);
         System.out.println("Is it a Palindrome (Reverse Check)? : " + isPalindromeReverse);
+
+
         String input4 = "radar";
         char[] chars = input4.toCharArray();
 
@@ -48,17 +63,19 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input : " + input4);
         System.out.println("Is Palindrome? : " + isPalindrome4);
+
+
         String input5 = "noon";
-        Stack<Character> stack = new Stack<>();
+        Stack<Character> stack5 = new Stack<>();
 
         for (char c : input5.toCharArray()) {
-            stack.push(c);
+            stack5.push(c);
         }
 
         boolean isPalindrome5 = true;
 
         for (char c : input5.toCharArray()) {
-            if (c != stack.pop()) {
+            if (c != stack5.pop()) {
                 isPalindrome5 = false;
                 break;
             }
@@ -66,6 +83,8 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input : " + input5);
         System.out.println("Is Palindrome? : " + isPalindrome5);
+
+
         String input6 = "civic";
         Queue<Character> queue = new LinkedList<>();
         Stack<Character> stack6 = new Stack<>();
@@ -87,6 +106,7 @@ public class PalindromeCheckerApp {
         System.out.println("Input : " + input6);
         System.out.println("Is Palindrome? : " + isPalindrome6);
 
+
         String input7 = "refer";
         Deque<Character> deque = new ArrayDeque<>();
 
@@ -107,5 +127,30 @@ public class PalindromeCheckerApp {
         System.out.println("Is Palindrome? : " + isPalindrome7);
 
 
+        String input8 = "level";
+        LinkedList<Character> list = new LinkedList<>();
+
+        for (char c : input8.toCharArray()) {
+            list.add(c);
+        }
+
+        boolean isPalindrome8 = true;
+
+        while (list.size() > 1) {
+            if (list.removeFirst() != list.removeLast()) {
+                isPalindrome8 = false;
+                break;
+            }
+        }
+
+        System.out.println("Input : " + input8);
+        System.out.println("Is Palindrome? : " + isPalindrome8);
+
+
+        String input9 = "madam";
+        boolean isPalindrome9 = checkPalindrome(input9, 0, input9.length() - 1);
+
+        System.out.println("Input : " + input9);
+        System.out.println("Is Palindrome? : " + isPalindrome9);
     }
 }
