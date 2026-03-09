@@ -14,9 +14,11 @@ public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
+
         System.out.println("Welcome to the Palindrome Checker Management System");
         System.out.println("Version : 1.0");
         System.out.println("System initialized successfully.");
+
 
         String input = "madam";
         boolean isPalindrome = true;
@@ -31,6 +33,7 @@ public class PalindromeCheckerApp {
         System.out.println("Input text: " + input);
         System.out.println("Is it a Palindrome? : " + isPalindrome);
 
+
         String reversed = "";
 
         for (int i = input.length() - 1; i >= 0; i--) {
@@ -40,6 +43,7 @@ public class PalindromeCheckerApp {
         boolean isPalindromeReverse = input.equals(reversed);
         System.out.println("Reversed text: " + reversed);
         System.out.println("Is it a Palindrome (Reverse Check)? : " + isPalindromeReverse);
+
 
         String input4 = "radar";
         char[] chars = input4.toCharArray();
@@ -60,6 +64,7 @@ public class PalindromeCheckerApp {
         System.out.println("Input : " + input4);
         System.out.println("Is Palindrome? : " + isPalindrome4);
 
+
         String input5 = "noon";
         Stack<Character> stack5 = new Stack<>();
 
@@ -78,6 +83,7 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input : " + input5);
         System.out.println("Is Palindrome? : " + isPalindrome5);
+
 
         String input6 = "civic";
         Queue<Character> queue = new LinkedList<>();
@@ -99,6 +105,7 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input : " + input6);
         System.out.println("Is Palindrome? : " + isPalindrome6);
+
 
         String input7 = "refer";
         Deque<Character> deque = new ArrayDeque<>();
@@ -182,5 +189,10 @@ class PalindromeService {
             end--;
         }
         return true;
+        String input9 = "madam";
+        boolean isPalindrome9 = checkPalindrome(input9, 0, input9.length() - 1);
+
+        System.out.println("Input : " + input9);
+        System.out.println("Is Palindrome? : " + isPalindrome9);
     }
 }
