@@ -165,6 +165,30 @@ public class PalindromeCheckerApp {
 
         System.out.println("Input : " + input10);
         System.out.println("Is Palindrome? : " + isPalindrome10);
+
+        PalindromeService service = new PalindromeService();
+        String input11 = "racecar";
+        boolean isPalindrome11 = service.checkPalindrome(input11);
+
+        System.out.println("Input : " + input11);
+        System.out.println("Is Palindrome? : " + isPalindrome11);
+    }
+}
+
+class PalindromeService {
+
+    public boolean checkPalindrome(String input) {
+        int start = 0;
+        int end = input.length() - 1;
+
+        while (start < end) {
+            if (input.charAt(start) != input.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
         String input9 = "madam";
         boolean isPalindrome9 = checkPalindrome(input9, 0, input9.length() - 1);
 
